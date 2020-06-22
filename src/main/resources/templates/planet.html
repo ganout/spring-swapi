@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title>The Star Wars API - Planet</title>
 </head>
-<body>
-<h1 th:text="${planetInfos.name}">$name</h1>
-<h3 th:text="${planetInfos.population}">$population</h3>
+<body th:object="${planetInfos}">
+<h1 th:text="*{name}"></h1>
+<h3 th:text="|population : *{population} |"></h3>
+<h3 th:text="|diameter : *{diameter} |"></h3>
+<h3 th:text="|rotation period : *{rotationPeriod} |"></h3>
 <a href="/">Go back</a>
 </body>
 </html>
